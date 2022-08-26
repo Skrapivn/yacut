@@ -17,21 +17,30 @@ python -m venv venv
 ```
 
 ```python
-source venv/bin/activate
+ . venv/Scripts/activate
 ```
 
 Обновить версию ```pip``` и установить зависимости из ```requirements.txt```:
 
 
 ```python
-python -m pip install -–upgrade pip
+python -m pip install --upgrade pip
 ```
 
 ```python
 pip install -r requirements.txt
 ```
 
-Используем функцию создания таблиц в БД + переименовываем файле .env.example в файл в .env:
+Необходимо изменить ключи, при необходимости, в файле .env.example и переименовать файл в .env:
+
+```
+FLASK_APP=opinions_app
+FLASK_ENV=development #  or production
+DATABASE_URI=sqlite:///db.sqlite3
+SECRET_KEY=you_secret_key # можно использовать в settings.py - os.urandom(20).hex() для случайного ключа
+```
+
+Используем функцию создания таблиц в БД:
 
 ```python
 flask create_db  
@@ -49,7 +58,7 @@ flask run
 flask routes
 ```
 
-Документацию по API можно посмотреть в файле **openapi.yml** 
+Документацию по API можно посмотреть в файле **openapi.yml**
 Для удобной работы с документом воспользуйтесь онлайн-редактором Swagger Editor <https://editor.swagger.io/>, в котором можно визуализировать спецификацию.
 
 [Sergey K.](https://github.com/skrapivn/)
