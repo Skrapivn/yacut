@@ -58,7 +58,8 @@ flask run
 flask routes
 ```
 
-Документацию по API можно посмотреть в файле **openapi.yml**
+Документацию по API можно посмотреть в файле **openapi.yml**.
+
 Для удобной работы с документом воспользуйтесь онлайн-редактором Swagger Editor <https://editor.swagger.io/>, в котором можно визуализировать спецификацию.
 
 [Sergey K.](https://github.com/skrapivn/)
